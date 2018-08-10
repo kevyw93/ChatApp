@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
 # Use Redis adapter to run Action Cable in production
@@ -40,6 +41,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-rails'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
