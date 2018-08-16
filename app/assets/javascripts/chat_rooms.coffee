@@ -23,7 +23,25 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
-        messages.append data['message']
+        userName = data["user"]
+        time = data["time"]
+        body = data["message"]
+        debugger
+        newMessage = '<div class="card">
+          <div class="card-block">
+            <div class="row">
+              <div class="col-md-1">'.concat(userName).concat(
+              '</div>
+              <div class="col-md-11">
+                <p class="card-text">
+                  <span class="text-muted">').concat(userName).concat(" at ").concat(time).concat("
+                 says </span><br>").concat(body).concat('</p>
+              </div>
+            </div>
+          </div>
+        </div>')
+        messages.append $(newMessage)
+        # messages.append data['message']
         messages_to_bottom()
 
       send_message: (message, channelId) ->

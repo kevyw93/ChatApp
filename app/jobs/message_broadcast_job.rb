@@ -4,7 +4,8 @@ class MessageBroadcastJob < ApplicationJob
   def perform(message)
     ChatRoomsChannel.broadcast_to(message.chat_room, {
     message: message.body,
-    user: message.user.email
+    user: message.user.email,
+    time: message.timestamp
   })
   end
 end

@@ -11,7 +11,6 @@ class ChatRoomsChannel < ApplicationCable::Channel
 
   def send_message(data)
     current_user.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
-    # self.broadcast("chat_rooms", {message: data['message'], chat_room_id: data['chat_room_id']})
   end
 
 

@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   def create
-    debugger
     message = Message.new(message_params)
     message.user = current_user
     if message.save
