@@ -25,6 +25,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'jquery-rails'
+gem 'turbolinks', '~> 5.1.0'
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
 # Use Redis adapter to run Action Cable in production
@@ -36,7 +37,7 @@ gem 'redis', '~> 4.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a  console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

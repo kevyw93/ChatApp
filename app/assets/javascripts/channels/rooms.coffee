@@ -1,11 +1,17 @@
 # jQuery(document).on 'turbolinks:load', ->
-#   messages = $('messages')
-#   if $('messages').length > 0
+#   messages = $('#messages')
+#   if $('#messages').length > 0
 #     messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
+#     messages_to_bottom();
+#
+#
+#     url = jQuery(document)[0].URL.split("/");
+#     urlLength = url.length - 1;
+#     channelId = parseInt(url[urlLength]);
 #
 #     App.global_chat = App.cable.subscriptions.create {
-#       channel: "ChatRoomsChannel"
-#       chat_room_id: ''
+#         channel: "ChatRoomsChannel"
+#         chat_room_id: channelId
 #       },
 #       connected: ->
 #         # Called when the subscription is ready for use on the server
@@ -16,16 +22,15 @@
 #       received: (data) ->
 #         messages.append data['message']
 #         messages_to_bottom()
-#         # Called when there's incoming data on the websocket for this channel
 #
-#       send_message: (message, chat_room_id) ->
-#         @perform 'send_message', message: message, chat_room_id: chat_room_id
+#       send_message: (message, channelId) ->
+#         @perform 'send_message', message: message, chat_room_id: channelId
 #
-# $('new_message').submit (e) ->
-#   $this = $(this)
-#   textarea = $this.find('message_body')
-#   if $.trim(textarea.val()).length >  1
-#     App.global_chat.send_message textarea.val(), messsages.data('chat-room-id')
-#     textarea.val('')
-#   e.preventDefault()
-#   return false
+#    $('#new_message').submit (e) ->
+#       $this = $(this)
+#       textarea = $this.find('#message_body')
+#       if $.trim(textarea.val()).length > 1
+#         App.global_chat.send_message textarea.val(), channelId
+#         textarea.val('')
+#       e.preventDefault()
+#       return false
