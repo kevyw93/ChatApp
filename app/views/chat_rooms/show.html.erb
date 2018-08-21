@@ -1,6 +1,8 @@
 
 <div>
-  <% User.all.each do |user|%>
+  <% all_user = User.all %>
+  <% all_other_user = all_user.reject {|acceptable_user| acceptable_user.id === current_user.id} %>
+  <% all_other_user.each do |user| %>
     <%= link_to memberships_url(membership:{user_id: user.id, chat_room_id: @chat_room.id}), method: :post do %>
       <%= user.email %>
     <%end%>

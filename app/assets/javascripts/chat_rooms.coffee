@@ -26,7 +26,6 @@ jQuery(document).on 'turbolinks:load', ->
         userName = data["user"]
         time = data["time"]
         body = data["message"]
-        debugger
         newMessage = '<div class="card">
           <div class="card-block">
             <div class="row">
