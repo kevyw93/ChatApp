@@ -1,5 +1,12 @@
 
+<div>
+  <% User.all.each do |user|%>
+    <%= link_to memberships_url(membership:{user_id: user.id, chat_room_id: @chat_room.id}), method: :post do %>
+      <%= user.email %>
+    <%end%>
 
+  <% end %>
+</div>
 <div class="row col-md-8 col-md-offset-2">
   <h1><%= @chat_room.title %></h1>
   <div class="panel panel-default">

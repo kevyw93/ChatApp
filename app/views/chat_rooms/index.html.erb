@@ -2,5 +2,10 @@
 <p class="lead"><%= link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
 
 <ul>
-  <%= render @chat_rooms  %>
+  <%= render current_user.chat_rooms  %>
+
+  <% current_user.memberships.each do |member| %>
+    <%= render member.chat_room %>
+  <%end%>
+
 </ul>
