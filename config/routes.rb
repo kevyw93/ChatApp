@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     session: 'users/sessions',
     registrations: 'users/registrations'
   }
-  root 'chat_rooms#index'
+  # root 'chat_rooms#index'
+  root to: 'static_pages#root'
+  namespace :api, defaults: {format: :json} do 
   resources :chat_rooms, only:[:new, :create, :show, :index]
   resources :messages
   resources :memberships
