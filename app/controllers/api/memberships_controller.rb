@@ -1,4 +1,4 @@
-class MembershipsController < ApplicationController
+class Api::MembershipsController < ApplicationController
 
   def create
     @membership = Membership.new(membership_params)
