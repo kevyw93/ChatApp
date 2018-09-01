@@ -3,9 +3,12 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
-  },
-  "devDependencies": {
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -15,7 +18,8 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.6"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "build": "webpack --watch --mode development"
   }
 }

@@ -3,7 +3,8 @@ import {Switch, Route} from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="">
+    <div className="hi">
+      Hi
       Landing Page
     </div>
   );
