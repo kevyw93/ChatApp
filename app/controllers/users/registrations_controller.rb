@@ -11,15 +11,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    debugger
-    @user = User.find_by(email: params[:user][:email])
+    @user = User.find_by(email: params[:email])
     errors = {}
     if @user
       errors[:email] = ["Email already taken"]
       render json: errors, status: 422
       return
     end
-    @user = User.new(users_params)
+    @user = User.new({email: params[:email], password: params[:password]})
     if @user.save
       sign_in @user
       render '/api/users/show'
@@ -55,9 +54,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

@@ -10,6 +10,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    debugger
     @user = User.find_for_database_authentication(email: params[:user][:email])
 
     if @user && @user.valid_password?(params[:user][:password])

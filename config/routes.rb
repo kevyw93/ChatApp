@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users,  controllers: { registrations: 'users/registrations',
-                                 sessions: 'users/sessions'
-                               },
-                  skip: [:registrations, :sessions]
+  devise_for :users,  controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+
   get 'messages/index'
 
 

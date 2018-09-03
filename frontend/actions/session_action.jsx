@@ -1,6 +1,5 @@
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
-import {signup} from '../utils/signup_api';
-import {login, logout} from '../utils/session_api';
+import {login, logout, signup} from '../utils/session_api';
 
 export const receiveCurrentUser = (currentUser) => {
   return {

@@ -1,6 +1,6 @@
 export const login = (user) => {
   return $.ajax({
-      type: 'POST',
+      type: 'post',
       url: 'users/sign_in',
       data: user
   });
@@ -8,7 +8,15 @@ export const login = (user) => {
 
 export const logout = () => {
   return $.ajax({
-      type: 'DELETE',
+      type: 'delete',
       url: 'users/sign_out',
+  });
+};
+
+export const signup = (user) => {
+  return $.ajax({
+    type: 'post',
+    url: 'users',
+    data: user
   });
 };

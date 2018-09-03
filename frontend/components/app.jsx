@@ -1,11 +1,13 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
+import LandingContainer from "./landing/landing_container";
 
-const App = () => {
+const App = (props) => {
   return (
-    <div className="hi">
-      Hi
-      Landing Page
+    <div className="webapp-container">
+      <Switch>
+        <Route path = "/" component={LandingContainer} />
+      </Switch>
     </div>
   );
 };
