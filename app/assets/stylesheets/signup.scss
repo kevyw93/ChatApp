@@ -18,7 +18,7 @@
   background: rgba(0,0,0,0.5);
 }
 
-.username-input{
+.email{
   border: 1px solid grey;
   padding: 3px;
   width: 357px;
@@ -28,14 +28,14 @@
   color: white;
 }
 
-.username-input::placeholder{
+.email::placeholder{
   color: white;
 }
-.password-input::placeholder{
+.password::placeholder{
   color: white;
 }
 
-.password-input{
+.password{
   padding: 3px;
   border: 1px solid grey;
   border-top: none;

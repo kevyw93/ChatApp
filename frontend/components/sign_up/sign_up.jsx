@@ -4,11 +4,13 @@ class SignUp extends React.Component {
   constructor(props){
     super(props);
     this.state = {email: '', password: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+
   }
 
   handleChange(field){
-    debugger
-    return (e)=> this.setState({[field]: e.target.value});
+    return (e) => this.setState({[field]: e.target.value});
   }
 
   handleLogin(e){
@@ -20,9 +22,9 @@ class SignUp extends React.Component {
   render(){
     return (
       <div className="signup-container">
-        <form className="signup-form" onSubmit={this.handleSubmit}>
-          <input className="username-input" placeholder='Enter Username' />
-          <input className="password-input" placeholder='Enter Password' />
+        <form className="signup-form" onSubmit={this.handleLogin}>
+          <input className="email" placeholder='Enter Email' onChange={this.handleChange("email")} />
+        <input className="password" placeholder='Enter Password' onChange={this.handleChange("password")} />
           <button id="signup-button">Sign Up</button>
         </form>
       </div>
