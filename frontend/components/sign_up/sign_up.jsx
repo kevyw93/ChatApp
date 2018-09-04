@@ -7,6 +7,7 @@ class SignUp extends React.Component {
   }
 
   handleChange(field){
+    debugger
     return (e)=> this.setState({[field]: e.target.value});
   }
 
@@ -18,11 +19,11 @@ class SignUp extends React.Component {
 
   render(){
     return (
-      <div className="signup_container">
-        <form onSubmit={this.handleSubmit}>
-          <input placeholder='Enter Username' />
-          <input placeholder='Enter Password' />
-          <button>Sign Up</button>
+      <div className="signup-container">
+        <form className="signup-form" onSubmit={this.handleSubmit}>
+          <input className="username-input" placeholder='Enter Username' />
+          <input className="password-input" placeholder='Enter Password' />
+          <button id="signup-button">Sign Up</button>
         </form>
       </div>
     );

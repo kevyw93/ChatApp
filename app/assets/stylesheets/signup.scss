@@ -1,0 +1,56 @@
+.signup-container{
+  width: 600px;
+  height: 550px;
+  display: flex;
+  align-self: center;
+  border: 1px darkslategrey solid;
+  background-image: url('./totoroplain6.png');
+  background-size: cover;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  margin: auto auto;
+  padding: 25px 15px 15px 15px;
+  border: 1px solid darkslategrey;
+  background: rgba(0,0,0,0.5);
+}
+
+.username-input{
+  border: 1px solid grey;
+  padding: 3px;
+  width: 357px;
+  text-align: center;
+  align-self: center;
+  background: transparent;
+  color: white;
+}
+
+.username-input::placeholder{
+  color: white;
+}
+.password-input::placeholder{
+  color: white;
+}
+
+.password-input{
+  padding: 3px;
+  border: 1px solid grey;
+  border-top: none;
+  width: 357px;
+  text-align: center;
+  align-self: center;
+  background: transparent;
+  color: white;
+}
+
+#signup-button{
+  border: 1px solid green;
+  background-color: green;
+  text-align: center;
+  width: 70px;
+  align-self: center;
+  margin-top: 10px;
+}
