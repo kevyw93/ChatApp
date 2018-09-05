@@ -1,11 +1,12 @@
 import {connect} from "react-redux";
-import {signup} from "../../utils/session_api";
+import {signUp, logIn} from "../../actions/session_action";
 import SignUp from "./sign_up";
 
 
-const mapDispatchToProps = (dispatch) => {
+
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    signup: (user) => dispatch(signup(user))
+    signUp: (user) => dispatch(signUp(user))
   };
 };
 

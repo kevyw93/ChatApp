@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
+  prepend_before_action :require_no_authentication, only: :cancel
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -11,14 +12,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:user][:email])
     errors = {}
     if @user
       errors[:email] = ["Email already taken"]
       render json: errors, status: 422
       return
     end
-    @user = User.new({email: params[:email], password: params[:password]})
+    @user = User.new(users_params)
     if @user.save
       sign_in @user
       render '/api/users/show'
@@ -56,6 +57,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  end
+
+  def users_params
+    params.require(:user).permit(:email, :password)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

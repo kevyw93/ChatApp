@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from "./components/root";
-import {login, logout} from "./utils/session_api";
-import {logIn} from "./actions/session_action";
+import {login, logout, signup} from "./utils/session_api";
+import {logIn, logOff} from "./actions/session_action";
 
+window.logOff = logOff;
+window.signup = signup;
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {

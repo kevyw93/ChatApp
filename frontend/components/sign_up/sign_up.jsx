@@ -1,11 +1,12 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 class SignUp extends React.Component {
   constructor(props){
     super(props);
     this.state = {email: '', password: ''};
     this.handleChange = this.handleChange.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignup = this.handleSignup.bind(this);
 
   }
 
@@ -13,24 +14,24 @@ class SignUp extends React.Component {
     return (e) => this.setState({[field]: e.target.value});
   }
 
-  handleLogin(e){
+  handleSignup(e){
     e.preventDefault();
-    const user = {email: this.state.email, password: this.state.password};
-    this.props.signup(user);
+    const user = {user: {email: this.state.email, password: this.state.password }};
+    this.props.signUp(user);
   }
 
   render(){
     return (
       <div className="signup-container">
-        <form className="signup-form" onSubmit={this.handleLogin}>
+        <form className="signup-form" onSubmit={this.handleSignup}>
           <input className="email" placeholder='Enter Email' onChange={this.handleChange("email")} />
         <input className="password" placeholder='Enter Password' onChange={this.handleChange("password")} />
           <button id="signup-button">Sign Up</button>
         </form>
+        <Link to="/">LogIn</Link>
       </div>
     );
   }
-
 
 }
 
