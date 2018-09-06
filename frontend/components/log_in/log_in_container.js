@@ -5,7 +5,7 @@ import Login from "./log_in";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logIn: () => dispatch(logIn()),
+    logIn: (user) => dispatch(logIn(user)),
     logOff: () => dispatch(logOff())
   };
 };
