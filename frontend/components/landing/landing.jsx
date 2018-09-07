@@ -11,14 +11,19 @@ class Landing extends React.Component {
 
   render(){
     let landing;
+    let landingBackground;
+    let landingBackgroundStyles;
     if(this.props.loggedIn){
+      landingBackground = "landing-logged";
       landing =
       <div>
         <SideBar />
         <button onClick={this.props.logOff}>Log Off</button>
-    </div>;
+      </div>;
 
     }else{
+      landingBackgroundStyles = "https://wallpapertag.com/wallpaper/full/0/1/a/138936-download-free-my-neighbor-totoro-wallpaper-1920x1080.jpg";
+      landingBackground = "landing-container";
       landing =
       <Switch>
         <Route exact path="/" component={LoginContainer} />
@@ -26,7 +31,7 @@ class Landing extends React.Component {
       </Switch>;
     }
     return(
-      <div className="landing_container">
+      <div className={landingBackground} style={{background: `url(${landingBackgroundStyles})`}}>
         {landing}
       </div>
     );

@@ -3,9 +3,10 @@
   height: 550px;
   display: flex;
   align-self: center;
-  border: 1px darkslategrey solid;
-  background-image: url('./totoroplain6.png');
-  background-size: cover;
+  border: 1px white solid;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  flex-direction: column;
 }
 
 .signup-form {

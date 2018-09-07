@@ -33,8 +33,8 @@ class Login extends React.Component {
           <input className="password" placeholder='Enter Password' onChange={this.handleChange("password")} />
           <button id="signup-button">Login</button>
         </form>
-        <button onClick={this.handleGuestLogin}>Guest Login</button>
-          <Link to="/signup">SignUp</Link>
+        <button className="guest-login-button" onClick={this.handleGuestLogin}>Guest Login</button>
+        <Link className="link-sign-login" to="/signup">SignUp</Link>
       </div>
     );
   }
