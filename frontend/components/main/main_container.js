@@ -3,7 +3,7 @@ import Main from "./main";
 
 const mapStateToProps = (state) => {
   return {
-    
+
   };
 };
 

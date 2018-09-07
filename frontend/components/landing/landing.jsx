@@ -2,7 +2,7 @@ import React from "react";
 import SignUpContainer from "../sign_up/sign_up_container";
 import LoginContainer from "../log_in/log_in_container";
 import {Switch, Route} from 'react-router-dom';
-import SideBar from "../side_bar/side_bar";
+import MainContainer from "../main/main_container";
 
 class Landing extends React.Component {
   constructor(props){
@@ -17,7 +17,7 @@ class Landing extends React.Component {
       landingBackground = "landing-logged";
       landing =
       <div>
-        <SideBar />
+        <MainContainer />
         <button onClick={this.props.logOff}>Log Off</button>
       </div>;
 
