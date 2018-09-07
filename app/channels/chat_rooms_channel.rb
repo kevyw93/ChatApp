@@ -9,9 +9,13 @@ class ChatRoomsChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def send_message(data)
-    current_user.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
-  end
+  # def received(data)
+  #   ChatRoomsChannel.broadcast_to(@chat_room, )
+  # end
+
+  # def send_message(data)
+  #   current_user.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
+  # end
 
 
 

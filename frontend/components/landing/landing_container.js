@@ -1,19 +1,19 @@
 import {connect} from "react-redux";
 import Landing from "./landing";
-import {logOff, signUp, logIn} from "../../actions/session_action";
+import {logOff, createCable} from "../../actions/session_action";
 
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    loggedIn: Boolean(state.entities.session.currentUser),
-      formType: ownProps.location.pathname.slice(1),
+    loggedIn: Boolean(state.entities.session.currentUser)
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
-    logOff: () => dispatch(logOff())
+    logOff: () => dispatch(logOff()),
+    createCable: (cable) => dispatch(createCable(cable))
   };
 };
 

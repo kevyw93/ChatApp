@@ -1,4 +1,5 @@
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+export const CREATE_CABLE = "CREATE_CABLE";
 import {login, logout, signup} from '../utils/session_api';
 
 export const receiveCurrentUser = (currentUser) => {
@@ -31,4 +32,11 @@ export const logOff = () => {
       () =>  dispatch(receiveCurrentUser(null))
     )
   );
+};
+
+export const createCable = (cable) => {
+  return {
+    type: CREATE_CABLE,
+    cable
+  };
 };
