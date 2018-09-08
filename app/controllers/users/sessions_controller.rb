@@ -14,7 +14,7 @@ class Users::SessionsController < Devise::SessionsController
 
     if @user && @user.valid_password?(params[:user][:password])
       sign_in @user
-      render '/api/users/show'
+      render partial: '/api/users/user'
     else
       render json: ["Invalid user and password combination"], status: 401
     end

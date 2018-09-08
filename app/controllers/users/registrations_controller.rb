@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(users_params)
     if @user.save
       sign_in @user
-      render '/api/users/show'
+      render partial: '/api/users/user'
     else
       errors[:login_error] = ["Doesn't fit the requirement"]
       render json: errors, status: 406
