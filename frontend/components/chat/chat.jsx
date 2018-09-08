@@ -5,16 +5,16 @@ class Chat extends React.Component {
     super(props);
   }
 
-  createSubscription(){
-    this.props.cableApp.cable.subscriptions.create({
-      channel: "ChatRoomsChannel",
-      room: window.location.href.match(/\d+$/)[0]
-    });
-  }
-  
-  componentDidMount(){
-    this.createSubscription();
-  }
+  // createSubscription(){
+  //   this.props.cableApp.cable.subscriptions.create({
+  //     channel: "ChatRoomsChannel",
+  //     room: window.location.href.match(/\d+$/)[0]
+  //   });
+  // }
+  //
+  // componentDidMount(){
+  //   this.createSubscription();
+  // }
 
   render(){
 

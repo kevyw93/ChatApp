@@ -3,7 +3,6 @@ export const CREATE_CABLE = "CREATE_CABLE";
 import {login, logout, signup} from '../utils/session_api';
 
 export const receiveCurrentUser = (currentUser) => {
-  debugger
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser

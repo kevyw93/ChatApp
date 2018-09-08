@@ -3,6 +3,7 @@ import React from "react";
 import SideBar from "../side_bar/side_bar";
 import ChatContainer from "../chat/chat_container";
 import {Route} from 'react-router-dom';
+import ActionCable from '../actioncable/actioncable';
 
 class Main extends React.Component {
   constructor(props){
@@ -21,8 +22,8 @@ class Main extends React.Component {
     return (
       <div>
         <SideBar />
-        
-        <Route path="chat-room/:id" component={ChatContainer}/>
+        <ActionCable />
+      {/* <Route path="/chat-room/:id" component={ChatContainer}/> */}
         Main bitches
 
       </div>

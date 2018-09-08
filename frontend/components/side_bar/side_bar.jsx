@@ -5,8 +5,6 @@ class SideBar extends React.Component {
     super(props);
   }
 
-
-
   render() {
     return (
       <div className="sidebar-container">
