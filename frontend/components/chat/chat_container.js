@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import Chat from "./chat";
 const mapStateToProps = (state) => {
   return {
-    cableApp: state.entities.session.cableApp
+    cableApp: state.entities.sessionReducer.cableApp
   };
 };
 

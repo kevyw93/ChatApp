@@ -9,13 +9,13 @@ export const receiveCurrentUser = (currentUser) => {
   };
 };
 
-export const signUp = (payload) => {
-  return dispatch => {
-    return signup(payload).then(
+export const signUp = (payload) => (
+  dispatch => (
+    signup(payload).then(
       (user) => dispatch(receiveCurrentUser(user))
-    );
-  };
-};
+    )
+  )
+);
 
 
 export const logIn = (payload) => (

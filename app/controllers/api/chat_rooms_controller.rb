@@ -1,6 +1,8 @@
 class Api::ChatRoomsController < ApplicationController
   def index
-    @chat_rooms = ChatRoom.all
+    @user = User.find(params[:user_id])
+    @chat_rooms = @user.chat_rooms
+    render json: @chat_rooms
   end
 
   def new

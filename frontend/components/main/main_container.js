@@ -1,15 +1,18 @@
 import {connect} from "react-redux";
 import Main from "./main";
+import {getChatRooms} from "../../actions/chatroom_actions";
 
 const mapStateToProps = (state) => {
   return {
-    cableApp: state.entities.session.cableApp
+    cableApp: state.entities.sessionReducer.cableApp,
+    id: state.entities.sessionReducer.currentUser.id,
+    chatRooms: state.entities.chatReducer.chatRooms
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    getChatRooms: (userId) => dispatch(getChatRooms(userId))
   };
 };
 

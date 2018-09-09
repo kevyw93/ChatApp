@@ -30,10 +30,9 @@ class ActionCable extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger
   return {
-    cableApp: state.entities.session.cableApp,
-    id: state.entities.session.currentUser.id
+    cableApp: state.entities.sessionReducer.cableApp,
+    id: state.entities.sessionReducer.currentUser.id
   };
 };
 

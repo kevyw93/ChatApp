@@ -10,7 +10,7 @@ window.signup = signup;
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {
-    const preloadedState = { entities:{session: {currentUser: window.currentUser}}};
+    const preloadedState = { entities:{sessionReducer: {currentUser: window.currentUser}}};
     store = configureStore(preloadedState);
     delete window.currentUser;
   }else {

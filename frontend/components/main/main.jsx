@@ -17,14 +17,30 @@ class Main extends React.Component {
   //     room: window.location.href.match(/\d+$/)[0]
   //   });
   // }
+  componentDidMount() {
+    this.props.getChatRooms({user_id: this.props.id});
+  }
 
+  enterChatRoom(){
+
+  }
+  
   render(){
+    let chatRooms;
+    if(this.props.chatRooms){
+      chatRooms = this.props.chatRooms.map((el,i) => (
+        <li key={i} onClick={}>
+          {el.title}
+        </li>
+      ));
+    }
     return (
       <div>
         <SideBar />
         <ActionCable />
-      {/* <Route path="/chat-room/:id" component={ChatContainer}/> */}
-        Main bitches
+        <div>
+          {chatRooms}
+        </div>
 
       </div>
     );

@@ -5,7 +5,7 @@ import {logOff, createCable} from "../../actions/session_action";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    loggedIn: Boolean(state.entities.session.currentUser)
+    loggedIn: Boolean(state.entities.sessionReducer.currentUser)
   };
 };
 
