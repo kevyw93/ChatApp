@@ -9,6 +9,7 @@ class Main extends React.Component {
   constructor(props){
     super(props);
     // this.createSubscription = this.createSubscription.bind(this);
+    this.enterChatRoom = this.enterChatRoom.bind(this);
   }
 
   // createSubscription(){
@@ -18,28 +19,39 @@ class Main extends React.Component {
   //   });
   // }
   componentDidMount() {
-    this.props.getChatRooms({user_id: this.props.id});
+    // put this in side bar
+    this.props.getAllUserChatRooms({user_id: this.props.id});
   }
 
-  enterChatRoom(){
-
+  enterChatRoom(chatroomId){
+    return () => this.props.showChatRoom(chatroomId);
   }
-  
+
   render(){
     let chatRooms;
+    let show;
     if(this.props.chatRooms){
+      // goes into sidebar
       chatRooms = this.props.chatRooms.map((el,i) => (
-        <li key={i} onClick={}>
-          {el.title}
+        <li key={i}>
+          <button onClick={this.enterChatRoom(el.id)}>
+            {el.title}
+          </button>
         </li>
       ));
     }
+    if(this.props.show){
+      show = <ChatContainer />;
+    }
     return (
       <div>
-        <SideBar />
         <ActionCable />
         <div>
+          <SideBar />
           {chatRooms}
+        </div>
+        <div>
+          {show}
         </div>
 
       </div>

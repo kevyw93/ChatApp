@@ -9,7 +9,6 @@ export const getAllChatRooms = (userId) => {
 export const getChatRoom = (chatroomId) => {
   return $.ajax({
     type: "get",
-    url: "/api/chat_room",
-    data: chatroomId
+    url: `/api/chat_rooms/${chatroomId}`,
   });
 };

@@ -17,10 +17,18 @@ class Chat extends React.Component {
   // }
 
   render(){
-
+    let messages;
+    if(this.props.messages){
+      debugger
+      messages = this.props.messages.map((el,i)=> (
+        <li key={i}>
+          {el.body}
+        </li>
+      ));
+    }
     return(
       <div>
-        Hi Bitch
+        {messages}
       </div>
     );
   }
