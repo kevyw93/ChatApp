@@ -25,7 +25,7 @@ class SignUp extends React.Component {
       <div className="signup-container">
         <form className="signup-form" onSubmit={this.handleSignup}>
           <input className="email" placeholder='Enter Email' onChange={this.handleChange("email")} />
-        <input className="password" placeholder='Enter Password' onChange={this.handleChange("password")} />
+          <input className="password" placeholder='Enter Password' onChange={this.handleChange("password")} />
           <button id="signup-button">Sign Up</button>
         </form>
         <Link to="/">LogIn</Link>

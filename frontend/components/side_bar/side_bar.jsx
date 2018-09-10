@@ -32,7 +32,7 @@ class SideBar extends React.Component {
         <h1>Create Channel</h1>
         <h1>Friends</h1>
         <h1>All Channels</h1>
-      {chatRooms}
+        {chatRooms}
       </div>
     );
   }

@@ -25,7 +25,7 @@ class Landing extends React.Component {
       this.createCable();
       landingBackground = "landing-logged";
       landing =
-      <div>
+      <div className="main">
         <MainContainer />
         <button onClick={this.props.logOff}>Log Off</button>
       </div>;

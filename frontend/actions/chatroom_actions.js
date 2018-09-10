@@ -24,10 +24,11 @@ export const getAllUserChatRooms = (userId) => {
 //   };
 // };
 
-export const showRoomMessages = (messages) => {
+export const showRoomMessages = (payload) => {
   return {
     type: SHOW_MESSAGES,
-    messages
+    messages: payload.messages,
+    chatroomId: payload.chatroomId
   };
 };
 
@@ -35,7 +36,10 @@ export const showRoomMessages = (messages) => {
 export const showChatRoom = (chatroomId) => {
   return dispatch => {
     return getChatRoom(chatroomId).then(
-      (messages) => dispatch(showRoomMessages(messages))
+      (messages) => {
+        const payload = {messages:messages, chatroomId:chatroomId};
+        return dispatch(showRoomMessages(payload));
+      }
     );
   };
 };

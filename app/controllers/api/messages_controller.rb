@@ -1,17 +1,20 @@
 class Api::MessagesController < ApplicationController
   def create
-    message = Message.new(message_params)
-    message.user = current_user
-    if message.save
-
+    @message = Message.new(message_params)
+    if @message.save
+      render :show
     else
-      redirect_to chat_rooms_path
+      render json: ["Cant Create"];
     end
+  end
+
+  def show
+    @message = Message.find(params[:id])
   end
 
   private
     def message_params
-      params.require(:message).permit(:body, :chat_room_id)
+      params.require(:message).permit(:body, :user_id, :chat_room_id)
     end
 
 end
