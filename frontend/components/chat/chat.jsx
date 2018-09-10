@@ -10,8 +10,7 @@ class Chat extends React.Component {
 
   sendMessage(e){
     e.preventDefault();
-    this.props.sendMessage({message: {body: this.state.body, user_id: this.props.currentUserId, chat_room_id: this.props.currentChatId }});
-    this.setState({body: ""});
+    this.props.sendMessage({message: {body: this.state.body, user_id: this.props.currentUserId, chat_room_id: this.props.currentChatId }}).then((success) => this.setState({body: ""}));
   }
 
   handleChange(field){
@@ -36,8 +35,12 @@ class Chat extends React.Component {
         <div>
 
           <form className="new-message" onSubmit={this.sendMessage}>
-            <input className="body" onChange={this.handleChange("body")}/>
-            <button>Submit</button>
+            <input className="body"
+              type="text"
+              value={this.state.body}
+              placeholder="New Message"
+              onChange={this.handleChange("body")}/>
+          <button type="submit">Submit</button>
           </form>
         </div>
       </div>
