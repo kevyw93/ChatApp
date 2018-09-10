@@ -5,21 +5,9 @@ class Chat extends React.Component {
     super(props);
   }
 
-  // createSubscription(){
-  //   this.props.cableApp.cable.subscriptions.create({
-  //     channel: "ChatRoomsChannel",
-  //     room: window.location.href.match(/\d+$/)[0]
-  //   });
-  // }
-  //
-  // componentDidMount(){
-  //   this.createSubscription();
-  // }
-
   render(){
     let messages;
     if(this.props.messages){
-      debugger
       messages = this.props.messages.map((el,i)=> (
         <li key={i}>
           {el.body}
@@ -29,6 +17,9 @@ class Chat extends React.Component {
     return(
       <div>
         {messages}
+        <input>
+
+        </input>
       </div>
     );
   }
