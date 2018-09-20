@@ -30,7 +30,7 @@ class Main extends React.Component {
     }
     return (
       <div className="main-container">
-        <ActionCable />
+        {/* <ActionCable /> */}
         <div className="sidebar-container">
           <SideBarContainer />
         </div>

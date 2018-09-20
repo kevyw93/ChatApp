@@ -1,4 +1,5 @@
 export const getAllChatRooms = (userId) => {
+  
   return $.ajax ({
     type: 'get',
     url: '/api/chat_rooms',

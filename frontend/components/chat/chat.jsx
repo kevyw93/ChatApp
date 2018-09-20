@@ -1,4 +1,5 @@
 import React from "react";
+import ActionCable from '../actioncable/actioncable';
 
 class Chat extends React.Component {
   constructor(props){
@@ -14,8 +15,11 @@ class Chat extends React.Component {
   }
 
   handleChange(field){
-    debugger
     return (e) => this.setState({[field]: e.target.value});
+  }
+
+  componentWillReceiveProps(nextProps,nextState){
+    debugger
   }
 
   render(){
@@ -27,11 +31,13 @@ class Chat extends React.Component {
         </li>
       ));
     }
+    console.log("bye")
     return(
       <div className="chat-container">
         <div>
           {messages}
         </div>
+        <ActionCable roomId={this.props.currentChatId} />
         <div>
 
           <form className="new-message" onSubmit={this.sendMessage}>

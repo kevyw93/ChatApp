@@ -1,7 +1,18 @@
 class Api::ChatRoomsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @chat_rooms = @user.chat_rooms
+    @user_chat_rooms = @user.chat_rooms
+
+    membership = Membership.where(user_id: params[:user_id])
+    if !membership.empty?
+      chat_room_ids = membership.map { |membership| membership.chat_room_id }
+      memberships_chat_rooms = ChatRoom.where(id: chat_room_ids)
+      @chat_rooms = @user_chat_rooms + memberships_chat_rooms
+    else
+      @chat_room_ids = membership
+      @chat_rooms = @user_chat_rooms
+    end
+
     render json: @chat_rooms
   end
 
@@ -22,7 +33,6 @@ class Api::ChatRoomsController < ApplicationController
   def show
     @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
     render :show
-    # @message = Message.new
   end
 
   private

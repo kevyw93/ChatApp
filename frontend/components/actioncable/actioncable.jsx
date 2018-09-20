@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import {receiveMessage} from "../../actions/message_actions";
 
 class ActionCable extends React.Component {
   constructor(props){
@@ -9,14 +10,19 @@ class ActionCable extends React.Component {
   componentWillMount(){
     this.subscription = this.props.cableApp.cable.subscriptions.create({
       channel: 'ChatRoomsChannel',
-      room: this.props.id},
+      room: this.props.roomId},
       // room: window.location.href.match(/\d+$/)[0]},
-      {received: (command,data) => {
+      {received: (data,command) => {
         console.log("Hi");
+        if(data.user.id !== this.props.id){
+          this.props.receiveMessage(data);
+        }
       }
     });
 
   }
+
+
 
   componentWillUnmount(){
     this.subscription.unsubscribe();
@@ -38,7 +44,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    receiveMessage: (msg) => dispatch(receiveMessage(msg))
   };
 };
 

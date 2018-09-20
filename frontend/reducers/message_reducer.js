@@ -1,5 +1,5 @@
 import {SHOW_MESSAGES} from "../actions/chatroom_actions";
-import {RECEIVE_MESSAGE} from "../actions/message_actions";
+import {RECEIVE_MESSAGE, RECEIVE_ACTIONCABLE_MESSAGE} from "../actions/message_actions";
 
 const preloadedState = {
   messages: null
@@ -14,6 +14,7 @@ const messageReducer = (state = preloadedState, action) => {
       const newMessages = Object.assign([], state.messages);
       newMessages.messages.push(action.message);
       return Object.assign({}, state, {messages: newMessages});
+  
     default:
       return state;
   }
