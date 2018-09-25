@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
   if(state.entities.messageReducer.messages){
     messages = state.entities.messageReducer.messages.messages;
   }
+  debugger
   return {
     cableApp: state.entities.sessionReducer.cableApp,
     currentUserId: state.entities.sessionReducer.currentUser.id,

@@ -18,9 +18,12 @@ class Chat extends React.Component {
     return (e) => this.setState({[field]: e.target.value});
   }
 
-  componentWillReceiveProps(nextProps,nextState){
-    debugger
-  }
+  // componentWillReceiveProps(nextProps){
+  //   debugger
+  //   console.log(nextProps);
+  // }
+
+
 
   render(){
     let messages;
@@ -32,6 +35,7 @@ class Chat extends React.Component {
       ));
     }
     console.log("bye")
+    //  try to create Message Component that handles Message and pass in messages to see if it rerenders
     return(
       <div className="chat-container">
         <div>
