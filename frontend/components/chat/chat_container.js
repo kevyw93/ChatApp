@@ -5,7 +5,7 @@ import {sendMessage} from "../../actions/message_actions";
 const mapStateToProps = (state) => {
   let messages;
   if(state.entities.messageReducer.messages){
-    messages = state.entities.messageReducer.messages.messages;
+    messages = state.entities.messageReducer.messages;
   }
   debugger
   return {

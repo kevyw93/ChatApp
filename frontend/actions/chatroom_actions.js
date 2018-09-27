@@ -27,7 +27,7 @@ export const getAllUserChatRooms = (userId) => {
 export const showRoomMessages = (payload) => {
   return {
     type: SHOW_MESSAGES,
-    messages: payload.messages,
+    messages: payload.messages.messages,
     chatroomId: payload.chatroomId
   };
 };

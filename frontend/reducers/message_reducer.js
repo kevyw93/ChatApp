@@ -10,12 +10,9 @@ const messageReducer = (state = preloadedState, action) => {
     case SHOW_MESSAGES:
       return Object.assign({}, state, {messages: action.messages});
     case RECEIVE_MESSAGE:
-
-      const newMessages = Object.assign([], state.messages);
-      debugger
-      newMessages.messages.push(action.message);
-      return Object.assign({}, state, {messages: newMessages});
-
+      const messages = Object.assign([], state.messages);
+      messages.push(action.message);
+      return Object.assign({}, state, {messages: messages});
     default:
       return state;
   }

@@ -15,7 +15,6 @@ class ActionCable extends React.Component {
       {received: (data,command) => {
         console.log("Hi");
         if(data.user.id !== this.props.id){
-          debugger
           this.props.receiveMessage(data);
         }
       }
