@@ -2,25 +2,14 @@ import React from "react";
 // import SideBarContainer from "../side_bar/side_bar_container";
 import SideBarContainer from "../side_bar/side_bar_container";
 import ChatContainer from "../chat/chat_container";
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import ActionCable from '../actioncable/actioncable';
 
 class Main extends React.Component {
   constructor(props){
     super(props);
-    // this.createSubscription = this.createSubscription.bind(this);
   }
 
-  // createSubscription(){
-  //   this.props.cableApp.cable.subscriptions.create({
-  //     channel: "ChatRoomsChannel",
-  //     room: window.location.href.match(/\d+$/)[0]
-  //   });
-  // }
-
-  // enterChatRoom(chatroomId){
-  //   return () => this.props.showChatRoom(chatroomId);
-  // }
 
   render(){
     let show;
@@ -30,7 +19,6 @@ class Main extends React.Component {
     }
     return (
       <div className="main-container">
-        {/* <ActionCable /> */}
         <div className="sidebar-container">
           <SideBarContainer />
         </div>

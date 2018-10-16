@@ -1,13 +1,14 @@
 import {connect} from "react-redux";
 import Chat from "./chat";
 import {sendMessage} from "../../actions/message_actions";
+// import {withRouter} from "react-router-dom";
 
-const mapStateToProps = (state) => {
+
+const mapStateToProps = (state, ownProps) => {
   let messages;
   if(state.entities.messageReducer.messages){
     messages = state.entities.messageReducer.messages;
   }
-  debugger
   return {
     cableApp: state.entities.sessionReducer.cableApp,
     currentUserId: state.entities.sessionReducer.currentUser.id,

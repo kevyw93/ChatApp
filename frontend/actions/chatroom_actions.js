@@ -18,12 +18,6 @@ export const getAllUserChatRooms = (userId) => {
   };
 };
 
-// export const toggleMainPage = () => {
-//   return {
-//     type: TOGGLE_MAIN
-//   };
-// };
-
 export const showRoomMessages = (payload) => {
   return {
     type: SHOW_MESSAGES,
